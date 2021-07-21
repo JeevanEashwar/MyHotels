@@ -9,7 +9,7 @@ import UIKit
 
 protocol HotelUpdates: AnyObject {
     func addNewHotel(hotel: Hotel)
-    func updateHotel(hotel: Hotel, at Index: Int)
+    func updateHotel(hotel: Hotel, at index: Int)
 }
 /// Enumeration to decide the behaviour of HotelDetailsFormViewController
 enum PageJob {
