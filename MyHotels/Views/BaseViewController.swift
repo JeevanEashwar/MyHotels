@@ -16,6 +16,9 @@ class BaseViewController: UIViewController {
     
     func configure(pageTitle: String) {
         title = pageTitle
+        self.view.addGradientBackgroungColor()
+        navigationController?.navigationBar.barTintColor = UIColor.themeColor(type: .dark)
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
     }
     
     /// Dismiss keyboard on tapping anywhere in the view
