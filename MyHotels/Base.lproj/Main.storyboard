@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tWw-le-JXv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jfc-dN-tDd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -20,21 +20,28 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4HO-8H-3sc">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="eOm-gr-e5X">
+                            <connections>
+                                <segue destination="tWw-le-JXv" kind="show" identifier="HotelDetailsFormViewSegue" id="EWC-Rs-PSh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="114"/>
+            <point key="canvasLocation" x="1026.0869565217392" y="113.83928571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Hotel Details Form View Controller-->
         <scene sceneID="gV3-FK-Z1A">
             <objects>
-                <viewController id="tWw-le-JXv" sceneMemberID="viewController">
+                <viewController id="tWw-le-JXv" customClass="HotelDetailsFormViewController" customModule="MyHotels" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="03s-Qw-May">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghy-o4-1Wr">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tT2-pV-Qw0" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
@@ -162,14 +169,34 @@
                             <constraint firstItem="ghy-o4-1Wr" firstAttribute="trailing" secondItem="sun-eO-QMl" secondAttribute="trailing" id="XiQ-Pn-PIu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Br0-gp-ELO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejd-z3-a7W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="114"/>
+            <point key="canvasLocation" x="1939.1304347826087" y="113.83928571428571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZwO-Ki-UQT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jfc-dN-tDd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="moQ-Sh-Wk5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WHU-1W-j1k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zJX-48-tfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="113.83928571428571"/>
         </scene>
     </scenes>
     <resources>
         <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
