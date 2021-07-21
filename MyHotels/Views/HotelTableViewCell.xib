@@ -10,15 +10,68 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotelTableViewCell" rowHeight="124" id="KGk-i7-Jjw" customClass="HotelTableViewCell" customModule="MyHotels" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="445" height="124"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotelTableViewCell" rowHeight="133" id="KGk-i7-Jjw" customClass="HotelTableViewCell" customModule="MyHotels" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="445" height="133"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="445" height="124"/>
+                <rect key="frame" x="0.0" y="0.0" width="445" height="133"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ta-9v-15v">
+                        <rect key="frame" x="10" y="10" width="425" height="113"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Gv4-34-5HT">
+                                <rect key="frame" x="10" y="11" width="100" height="97.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="tyP-uV-6ZK"/>
+                                    <constraint firstAttribute="height" constant="100" id="yA1-KP-vVt"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotel name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fx-eC-afi">
+                                <rect key="frame" x="130" y="10" width="275" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ax-Ty-jxD">
+                                <rect key="frame" x="130" y="51" width="275" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8ax-Ty-jxD" secondAttribute="trailing" constant="20" id="24b-VF-WcZ"/>
+                            <constraint firstItem="8ax-Ty-jxD" firstAttribute="top" secondItem="0Fx-eC-afi" secondAttribute="bottom" constant="20" id="364-B3-5sI"/>
+                            <constraint firstItem="Gv4-34-5HT" firstAttribute="top" secondItem="7Ta-9v-15v" secondAttribute="top" constant="10" id="Cq2-qp-1y5"/>
+                            <constraint firstItem="0Fx-eC-afi" firstAttribute="leading" secondItem="Gv4-34-5HT" secondAttribute="trailing" constant="20" id="FlS-VH-dzN"/>
+                            <constraint firstItem="Gv4-34-5HT" firstAttribute="leading" secondItem="7Ta-9v-15v" secondAttribute="leading" constant="10" id="KVe-yH-TBD"/>
+                            <constraint firstAttribute="trailing" secondItem="0Fx-eC-afi" secondAttribute="trailing" constant="20" id="VRu-Ee-KP9"/>
+                            <constraint firstItem="0Fx-eC-afi" firstAttribute="top" secondItem="Gv4-34-5HT" secondAttribute="top" id="eB3-wj-MUh"/>
+                            <constraint firstItem="8ax-Ty-jxD" firstAttribute="leading" secondItem="Gv4-34-5HT" secondAttribute="trailing" constant="20" id="uXJ-BT-jvI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="7Ta-9v-15v" secondAttribute="bottom" constant="10" id="B3y-d5-Zyc"/>
+                    <constraint firstItem="7Ta-9v-15v" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="HIS-CX-b0s"/>
+                    <constraint firstAttribute="trailing" secondItem="7Ta-9v-15v" secondAttribute="trailing" constant="10" id="bcs-a8-ffp"/>
+                    <constraint firstItem="7Ta-9v-15v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="pC8-ih-G6Q"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="222.46376811594206" y="133.25892857142856"/>
+            <connections>
+                <outlet property="containerView" destination="7Ta-9v-15v" id="aLZ-jB-iml"/>
+                <outlet property="hotelImageView" destination="Gv4-34-5HT" id="cSY-K9-Ble"/>
+                <outlet property="hotelName" destination="0Fx-eC-afi" id="jgt-uk-QTv"/>
+                <outlet property="rating" destination="8ax-Ty-jxD" id="20F-hl-Wpp"/>
+            </connections>
+            <point key="canvasLocation" x="222.46376811594206" y="135.60267857142856"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+    </resources>
 </document>

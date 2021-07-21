@@ -21,6 +21,16 @@ class HotelsListViewModel {
         return nil
     }
     
+    @discardableResult
+    func removeHotel(at index: Int) -> Hotel? {
+        if index >= 0 && index < hotels.count {
+            let removedHotel = hotels.remove(at: index)
+            reloadUI?()
+            return removedHotel
+        }
+        return nil
+    }
+    
     var reloadUI: (() -> ())?
     
     func addNewHotel(hotel: Hotel) {
@@ -33,5 +43,12 @@ class HotelsListViewModel {
             hotels[index] = hotel
             reloadUI?()
         }
+    }
+    
+    func hotelViewModel(at index: Int) -> HotelViewModel? {
+        if index >= 0 && index < hotels.count {
+            return HotelViewModel(model: hotels[index])
+        }
+        return nil
     }
 }

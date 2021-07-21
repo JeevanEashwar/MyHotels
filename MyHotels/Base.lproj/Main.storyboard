@@ -18,13 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l7Z-8p-e6Q">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" estimatedRowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l7Z-8p-e6Q">
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="l7Z-8p-e6Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JqS-Ci-jR3"/>
                             <constraint firstItem="l7Z-8p-e6Q" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QKa-67-YP6"/>
@@ -35,12 +35,13 @@
                     <navigationItem key="navigationItem" id="4HO-8H-3sc">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="eOm-gr-e5X">
                             <connections>
-                                <segue destination="tWw-le-JXv" kind="show" identifier="HotelDetailsFormViewSegue" id="EWC-Rs-PSh"/>
+                                <segue destination="tWw-le-JXv" kind="show" identifier="HotelDetailsFormViewSegueAdd" id="EWC-Rs-PSh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="hotelsListTableView" destination="l7Z-8p-e6Q" id="6nt-iY-ubB"/>
+                        <segue destination="tWw-le-JXv" kind="show" identifier="HotelDetailsFormViewSegueEdit" id="zlv-Wb-cbU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -241,6 +242,9 @@
             <point key="canvasLocation" x="115.94202898550725" y="113.83928571428571"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zlv-Wb-cbU"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="plus" catalog="system" width="128" height="113"/>

@@ -90,7 +90,7 @@ class HotelDetailsFormViewController: BaseViewController {
         case .edit:
             delegate?.updateHotel(hotel: newHotelDetails, at: indexOfHotel ?? Int.max)
         }
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

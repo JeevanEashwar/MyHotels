@@ -9,6 +9,12 @@ import UIKit
 
 class HotelTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var containerView: UIView!
+    
+    @IBOutlet weak var hotelImageView: UIImageView!
+    @IBOutlet weak var hotelName: UILabel!
+    @IBOutlet weak var rating: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,8 +26,11 @@ class HotelTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(hotel: Hotel, indexPath: IndexPath) {
-        
+    func configure(hotelViewModel: HotelViewModel, indexPath: IndexPath) {
+        hotelImageView.image = hotelViewModel.hotelImage
+        hotelName.attributedText = hotelViewModel.nameOfTheHotel
+        rating.attributedText = hotelViewModel.rating
+        containerView.addCardLook()
     }
     
 }
