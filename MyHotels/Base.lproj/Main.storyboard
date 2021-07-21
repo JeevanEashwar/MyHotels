@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jfc-dN-tDd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,13 +20,219 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4HO-8H-3sc">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="eOm-gr-e5X">
+                            <connections>
+                                <segue destination="tWw-le-JXv" kind="show" identifier="HotelDetailsFormViewSegue" id="EWC-Rs-PSh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="114"/>
+            <point key="canvasLocation" x="1026.0869565217392" y="113.83928571428571"/>
+        </scene>
+        <!--Hotel Details Form View Controller-->
+        <scene sceneID="gV3-FK-Z1A">
+            <objects>
+                <viewController id="tWw-le-JXv" customClass="HotelDetailsFormViewController" customModule="MyHotels" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="03s-Qw-May">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghy-o4-1Wr">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tT2-pV-Qw0" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="usL-Nr-imd" userLabel="Input fields stack view">
+                                                <rect key="frame" x="20" y="20" width="374" height="166"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of the hotel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z6c-xz-t9l">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YaO-Vm-9W6">
+                                                        <rect key="frame" x="0.0" y="44" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of stay" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kff-HR-5mj">
+                                                        <rect key="frame" x="0.0" y="88" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="tWw-le-JXv" id="JXy-V9-Ykx"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price per day in ₹" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MJT-xG-daT">
+                                                        <rect key="frame" x="0.0" y="132" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3cx-c3-HRk" userLabel="Rating buttons stack view">
+                                                <rect key="frame" x="72" y="206" width="270" height="35"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ups-ca-0y2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="AccentColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06s-LM-DDh">
+                                                        <rect key="frame" x="78.5" y="0.0" width="22" height="35"/>
+                                                        <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="ratingSelected:" destination="tWw-le-JXv" eventType="touchUpInside" id="Ir7-Yh-Yko"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai8-6b-sMR">
+                                                        <rect key="frame" x="121" y="0.0" width="22" height="35"/>
+                                                        <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="ratingSelected:" destination="tWw-le-JXv" eventType="touchUpInside" id="1Ej-nj-lbm"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrn-ZP-NcX">
+                                                        <rect key="frame" x="163" y="0.0" width="22" height="35"/>
+                                                        <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="ratingSelected:" destination="tWw-le-JXv" eventType="touchUpInside" id="T09-AV-Acf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3U-fV-i8m">
+                                                        <rect key="frame" x="205.5" y="0.0" width="22" height="35"/>
+                                                        <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="ratingSelected:" destination="tWw-le-JXv" eventType="touchUpInside" id="8JQ-lF-Sgi"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9n-ds-n4m">
+                                                        <rect key="frame" x="248" y="0.0" width="22" height="35"/>
+                                                        <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="ratingSelected:" destination="tWw-le-JXv" eventType="touchUpInside" id="kuf-IY-a4y"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="270" id="KDv-qB-6j8"/>
+                                                    <constraint firstAttribute="height" constant="35" id="bTW-iS-JJR"/>
+                                                </constraints>
+                                            </stackView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ygO-GJ-wx3">
+                                                <rect key="frame" x="20" y="277" width="374" height="371.5"/>
+                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ygO-GJ-wx3" secondAttribute="height" multiplier="1:1" id="HEd-cv-8eb"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1j-Xh-auK">
+                                                <rect key="frame" x="107" y="685" width="200" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="S5d-ae-6oM"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="bPa-cV-Fed"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Upload a photo"/>
+                                                <connections>
+                                                    <action selector="uploadPhoto:" destination="tWw-le-JXv" eventType="touchUpInside" id="85y-XB-W7L"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-hE-EvH">
+                                                <rect key="frame" x="107" y="760" width="200" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="U1o-9F-UdM"/>
+                                                    <constraint firstAttribute="height" constant="40" id="YE2-EW-Tew"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Save"/>
+                                                <connections>
+                                                    <action selector="saveAndExit:" destination="tWw-le-JXv" eventType="touchUpInside" id="vTc-Bi-1AE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="cbK-hE-EvH" firstAttribute="top" secondItem="s1j-Xh-auK" secondAttribute="bottom" constant="35" id="27r-fM-Vg6"/>
+                                            <constraint firstItem="cbK-hE-EvH" firstAttribute="centerX" secondItem="s1j-Xh-auK" secondAttribute="centerX" id="3yh-iK-vht"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cbK-hE-EvH" secondAttribute="bottom" constant="52" id="6T5-cP-Uyp"/>
+                                            <constraint firstItem="ygO-GJ-wx3" firstAttribute="leading" secondItem="tT2-pV-Qw0" secondAttribute="leading" constant="20" id="9l7-yK-rER"/>
+                                            <constraint firstAttribute="trailing" secondItem="ygO-GJ-wx3" secondAttribute="trailing" constant="20" id="Aiy-yJ-kgj"/>
+                                            <constraint firstItem="3cx-c3-HRk" firstAttribute="top" secondItem="usL-Nr-imd" secondAttribute="bottom" constant="20" id="IUa-7q-hpZ"/>
+                                            <constraint firstItem="usL-Nr-imd" firstAttribute="top" secondItem="tT2-pV-Qw0" secondAttribute="top" constant="20" id="L6u-Ws-Kh7"/>
+                                            <constraint firstItem="usL-Nr-imd" firstAttribute="leading" secondItem="tT2-pV-Qw0" secondAttribute="leading" constant="20" id="a8j-DW-90E"/>
+                                            <constraint firstItem="ygO-GJ-wx3" firstAttribute="top" secondItem="3cx-c3-HRk" secondAttribute="bottom" constant="35" id="ejo-si-0oO"/>
+                                            <constraint firstAttribute="trailing" secondItem="usL-Nr-imd" secondAttribute="trailing" constant="20" id="ldZ-Oc-WOM"/>
+                                            <constraint firstItem="3cx-c3-HRk" firstAttribute="centerX" secondItem="usL-Nr-imd" secondAttribute="centerX" id="qeN-JX-SYE"/>
+                                            <constraint firstItem="s1j-Xh-auK" firstAttribute="centerX" secondItem="3cx-c3-HRk" secondAttribute="centerX" id="sjk-Ks-771"/>
+                                            <constraint firstItem="s1j-Xh-auK" firstAttribute="top" secondItem="ygO-GJ-wx3" secondAttribute="bottom" constant="35" id="vTO-bc-3uL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tT2-pV-Qw0" secondAttribute="trailing" id="0pG-X9-gwP"/>
+                                    <constraint firstItem="tT2-pV-Qw0" firstAttribute="leading" secondItem="ghy-o4-1Wr" secondAttribute="leading" id="JDM-w6-5U9"/>
+                                    <constraint firstItem="tT2-pV-Qw0" firstAttribute="top" secondItem="ghy-o4-1Wr" secondAttribute="top" id="aoa-iC-w2J"/>
+                                    <constraint firstAttribute="bottom" secondItem="tT2-pV-Qw0" secondAttribute="bottom" id="cLf-Ay-p4x"/>
+                                    <constraint firstItem="tT2-pV-Qw0" firstAttribute="width" secondItem="ghy-o4-1Wr" secondAttribute="width" id="l9p-qY-VuA"/>
+                                    <constraint firstItem="tT2-pV-Qw0" firstAttribute="height" secondItem="ghy-o4-1Wr" secondAttribute="height" priority="250" id="roT-dy-Jsh"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sun-eO-QMl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ghy-o4-1Wr" firstAttribute="leading" secondItem="sun-eO-QMl" secondAttribute="leading" id="AKw-7s-t1N"/>
+                            <constraint firstItem="ghy-o4-1Wr" firstAttribute="top" secondItem="sun-eO-QMl" secondAttribute="top" id="HoL-My-yNh"/>
+                            <constraint firstAttribute="bottom" secondItem="ghy-o4-1Wr" secondAttribute="bottom" id="SU0-lf-64T"/>
+                            <constraint firstItem="ghy-o4-1Wr" firstAttribute="trailing" secondItem="sun-eO-QMl" secondAttribute="trailing" id="XiQ-Pn-PIu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Br0-gp-ELO"/>
+                    <connections>
+                        <outlet property="address" destination="YaO-Vm-9W6" id="zTX-Wg-CyV"/>
+                        <outlet property="dateOfStay" destination="Kff-HR-5mj" id="GKM-1O-ROW"/>
+                        <outlet property="hotelImageView" destination="ygO-GJ-wx3" id="EE3-jR-kgs"/>
+                        <outlet property="name" destination="Z6c-xz-t9l" id="fOL-SB-Ni6"/>
+                        <outlet property="pricePerDay" destination="MJT-xG-daT" id="6KV-GX-AaJ"/>
+                        <outlet property="ratingButtonsStackView" destination="3cx-c3-HRk" id="eag-R9-OyG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ejd-z3-a7W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1939.1304347826087" y="113.83928571428571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZwO-Ki-UQT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jfc-dN-tDd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="moQ-Sh-Wk5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WHU-1W-j1k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zJX-48-tfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="113.83928571428571"/>
         </scene>
     </scenes>
     <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

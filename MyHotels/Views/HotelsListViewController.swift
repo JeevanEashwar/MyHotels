@@ -7,11 +7,12 @@
 
 import UIKit
 
-class HotelsListViewController: UIViewController {
+class HotelsListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        configure(pageTitle: "Hotels")
     }
 
 }
