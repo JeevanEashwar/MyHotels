@@ -33,4 +33,23 @@ class HotelViewModel {
         }
         return nil
     }
+    
+    var address: String {
+        model.address
+    }
+    
+    var dateOfStay: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter.string(from: model.dateOfStay)
+    }
+    
+    var pricePerDay: String {
+        "\(model.pricePerDay)"
+    }
+    
+    var ratingSelected: Rating {
+        model.rating
+    }
 }

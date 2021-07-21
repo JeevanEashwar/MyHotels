@@ -44,9 +44,9 @@ class HotelsListViewController: BaseViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "HotelDetailsFormViewSegueAdd", let detailsVC = segue.destination as? HotelDetailsFormViewController {
-            detailsVC.injectDependencies(pageJob: .add, indexOfHotel: nil, delegate: self)
+            detailsVC.injectDependencies(viewModel: viewModel, pageJob: .add, indexOfHotel: nil, delegate: self)
         } else if segue.identifier == "HotelDetailsFormViewSegueEdit", let detailsVC = segue.destination as? HotelDetailsFormViewController, let index = self.editingHotelIndex {
-            detailsVC.injectDependencies(pageJob: .edit, indexOfHotel: index, delegate: self)
+            detailsVC.injectDependencies(viewModel: viewModel ,pageJob: .edit, indexOfHotel: index, delegate: self)
         }
     }
     
