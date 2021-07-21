@@ -1,12 +1,15 @@
 # MyHotels
 
-iOS assignment
+## iOS assignment
+
 General requirement
 • Written with Swift only.
 • iOS 13.0 and up.
 • Universal app (iPhone + iPad).
 • Compile and run without errors or warnings . • No 3rd party libraries.
+
 App requirement
+
 General
 • The app allows the user to add favorites hotel records.
 • As a user I should be able to see a list of my visited hotels.
@@ -14,6 +17,7 @@ General
 • App name is “MyHotels”.
 • The app has main screen that shows the list of the hotels.
 • The app has edit screen to allow the user to add or edit a hotel record.
+
 Main screen
 • Allows the user to open the edit screen to add/edit hotel record.
 • Allows the user to delete hotel record.
@@ -22,6 +26,7 @@ Main screen
 • Photo.
 • Hotel name. 
 • Rating.
+
 Edit screen
 • Allows the user to add/edit hotel record and *save it.
 • The user should be able to add/edit the following hotel details:
