@@ -63,6 +63,9 @@
                                                         <rect key="frame" x="0.0" y="88" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="tWw-le-JXv" id="JXy-V9-Ykx"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price per day in ₹" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MJT-xG-daT">
                                                         <rect key="frame" x="0.0" y="132" width="374" height="34"/>
@@ -83,22 +86,37 @@
                                                     <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06s-LM-DDh">
                                                         <rect key="frame" x="78.5" y="0.0" width="22" height="35"/>
                                                         <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="ratingSelected:" destination="tWw-le-JXv" eventType="touchUpInside" id="Ir7-Yh-Yko"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai8-6b-sMR">
                                                         <rect key="frame" x="121" y="0.0" width="22" height="35"/>
                                                         <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="ratingSelected:" destination="tWw-le-JXv" eventType="touchUpInside" id="1Ej-nj-lbm"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrn-ZP-NcX">
                                                         <rect key="frame" x="163" y="0.0" width="22" height="35"/>
                                                         <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="ratingSelected:" destination="tWw-le-JXv" eventType="touchUpInside" id="T09-AV-Acf"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3U-fV-i8m">
                                                         <rect key="frame" x="205.5" y="0.0" width="22" height="35"/>
                                                         <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="ratingSelected:" destination="tWw-le-JXv" eventType="touchUpInside" id="8JQ-lF-Sgi"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9n-ds-n4m">
                                                         <rect key="frame" x="248" y="0.0" width="22" height="35"/>
                                                         <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="ratingSelected:" destination="tWw-le-JXv" eventType="touchUpInside" id="kuf-IY-a4y"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -121,6 +139,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Upload a photo"/>
+                                                <connections>
+                                                    <action selector="uploadPhoto:" destination="tWw-le-JXv" eventType="touchUpInside" id="85y-XB-W7L"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-hE-EvH">
                                                 <rect key="frame" x="107" y="760" width="200" height="40"/>
@@ -130,6 +151,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Save"/>
+                                                <connections>
+                                                    <action selector="saveAndExit:" destination="tWw-le-JXv" eventType="touchUpInside" id="vTc-Bi-1AE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -170,6 +194,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Br0-gp-ELO"/>
+                    <connections>
+                        <outlet property="address" destination="YaO-Vm-9W6" id="zTX-Wg-CyV"/>
+                        <outlet property="dateOfStay" destination="Kff-HR-5mj" id="GKM-1O-ROW"/>
+                        <outlet property="hotelImageView" destination="ygO-GJ-wx3" id="EE3-jR-kgs"/>
+                        <outlet property="name" destination="Z6c-xz-t9l" id="fOL-SB-Ni6"/>
+                        <outlet property="pricePerDay" destination="MJT-xG-daT" id="6KV-GX-AaJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejd-z3-a7W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,12 +18,13 @@ class BaseViewController: UIViewController {
         title = pageTitle
     }
     
+    /// Dismiss keyboard on tapping anywhere in the view
     func addTapGestureToDismissKeyboard() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.numberOfTapsRequired = 1
         view.addGestureRecognizer(tapGesture)
     }
-
+    
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
