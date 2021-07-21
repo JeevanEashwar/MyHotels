@@ -27,6 +27,7 @@ class HotelDetailsFormViewController: BaseViewController {
     
     
     var pageJob: PageJob = .add
+    let datePicker = UIDatePicker()
     
     // MARK: View methods
     override func viewDidLoad() {
@@ -35,6 +36,7 @@ class HotelDetailsFormViewController: BaseViewController {
         let pageTitle = pageJob == .add ? "Add new hotel" : "Edit"
         configure(pageTitle: pageTitle)
         addTapGestureToDismissKeyboard()
+        createDatePicker()
     }
     
     // MARK: IBAction methods
@@ -49,8 +51,34 @@ class HotelDetailsFormViewController: BaseViewController {
     
 }
 
-extension HotelDetailsFormViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+/// Date Picker logic
+extension HotelDetailsFormViewController {
+    private func createDatePicker() {
+        // toolbar
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(datePicked))
+        toolBar.setItems([doneButton], animated: true)
         
+        // datepicker
+        datePicker.datePickerMode = .date
+        if #available(iOS 14, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+            datePicker.sizeToFit()
+        }
+        
+        dateOfStay.inputAccessoryView = toolBar
+        dateOfStay.inputView = datePicker
+    }
+    
+    @objc private func datePicked() {
+        // format the picked date to display
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        
+        let pickedDate = datePicker.date
+        dateOfStay.text = formatter.string(from: pickedDate)
+        dateOfStay.endEditing(true)
     }
 }
