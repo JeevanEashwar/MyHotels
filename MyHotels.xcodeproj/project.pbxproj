@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0927C8EC26A7EABD00AA1CB3 /* HotelDetailsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0927C8EB26A7EABD00AA1CB3 /* HotelDetailsFormViewController.swift */; };
-		0927C8F126A7EC3500AA1CB3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0927C8F026A7EC3500AA1CB3 /* BaseViewController.swift */; };
+		09432C2626A7F04A0014CCF0 /* HotelDetailsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09432C2426A7F04A0014CCF0 /* HotelDetailsFormViewController.swift */; };
+		09432C2726A7F04A0014CCF0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09432C2526A7F04A0014CCF0 /* BaseViewController.swift */; };
 		09CD08FF26A7C2E300574B58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CD08FE26A7C2E300574B58 /* AppDelegate.swift */; };
 		09CD090126A7C2E300574B58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CD090026A7C2E300574B58 /* SceneDelegate.swift */; };
 		09CD090326A7C2E300574B58 /* HotelsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CD090226A7C2E300574B58 /* HotelsListViewController.swift */; };
@@ -39,8 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0927C8EB26A7EABD00AA1CB3 /* HotelDetailsFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HotelDetailsFormViewController.swift; path = ../../../HotelDetailsFormViewController.swift; sourceTree = "<group>"; };
-		0927C8F026A7EC3500AA1CB3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ../../../BaseViewController.swift; sourceTree = "<group>"; };
+		09432C2426A7F04A0014CCF0 /* HotelDetailsFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelDetailsFormViewController.swift; sourceTree = "<group>"; };
+		09432C2526A7F04A0014CCF0 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		09CD08FB26A7C2E300574B58 /* MyHotels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHotels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09CD08FE26A7C2E300574B58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09CD090026A7C2E300574B58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +84,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09432C2C26A7F1140014CCF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09CD090226A7C2E300574B58 /* HotelsListViewController.swift */,
+				09432C2526A7F04A0014CCF0 /* BaseViewController.swift */,
+				09432C2426A7F04A0014CCF0 /* HotelDetailsFormViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		09CD08F226A7C2E300574B58 = {
 			isa = PBXGroup;
 			children = (
@@ -111,9 +121,7 @@
 				09CD08FE26A7C2E300574B58 /* AppDelegate.swift */,
 				09CD090026A7C2E300574B58 /* SceneDelegate.swift */,
 				09CD093626A7C4AE00574B58 /* SupportingFiles */,
-				09CD090226A7C2E300574B58 /* HotelsListViewController.swift */,
-				0927C8EB26A7EABD00AA1CB3 /* HotelDetailsFormViewController.swift */,
-				0927C8F026A7EC3500AA1CB3 /* BaseViewController.swift */,
+				09432C2C26A7F1140014CCF0 /* Views */,
 				09CD090426A7C2E300574B58 /* Main.storyboard */,
 				09CD090726A7C2E400574B58 /* Assets.xcassets */,
 				09CD090926A7C2E400574B58 /* LaunchScreen.storyboard */,
@@ -289,10 +297,10 @@
 			files = (
 				09CD090326A7C2E300574B58 /* HotelsListViewController.swift in Sources */,
 				09CD08FF26A7C2E300574B58 /* AppDelegate.swift in Sources */,
-				0927C8EC26A7EABD00AA1CB3 /* HotelDetailsFormViewController.swift in Sources */,
+				09432C2626A7F04A0014CCF0 /* HotelDetailsFormViewController.swift in Sources */,
 				09CD094226A7C56400574B58 /* Hotel.swift in Sources */,
 				09CD090126A7C2E300574B58 /* SceneDelegate.swift in Sources */,
-				0927C8F126A7EC3500AA1CB3 /* BaseViewController.swift in Sources */,
+				09432C2726A7F04A0014CCF0 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
