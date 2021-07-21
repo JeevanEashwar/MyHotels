@@ -200,6 +200,7 @@
                         <outlet property="hotelImageView" destination="ygO-GJ-wx3" id="EE3-jR-kgs"/>
                         <outlet property="name" destination="Z6c-xz-t9l" id="fOL-SB-Ni6"/>
                         <outlet property="pricePerDay" destination="MJT-xG-daT" id="6KV-GX-AaJ"/>
+                        <outlet property="ratingButtonsStackView" destination="3cx-c3-HRk" id="eag-R9-OyG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejd-z3-a7W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

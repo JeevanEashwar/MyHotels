@@ -25,6 +25,7 @@ class HotelDetailsFormViewController: BaseViewController {
     @IBOutlet weak var pricePerDay: UITextField!
     @IBOutlet weak var hotelImageView: UIImageView!
     
+    @IBOutlet weak var ratingButtonsStackView: UIStackView!
     
     var pageJob: PageJob = .add
     let datePicker = UIDatePicker()
@@ -40,7 +41,17 @@ class HotelDetailsFormViewController: BaseViewController {
     }
     
     // MARK: IBAction methods
-    @IBAction func ratingSelected(_ sender: Any) {
+    @IBAction func ratingSelected(_ sender: UIButton) {
+        let tagSelected = sender.tag
+        // Store the selected rating
+        let ratingSelected = Rating(rawValue: tagSelected - 1000)
+        // update UI
+        for subView in ratingButtonsStackView.arrangedSubviews {
+            if let button = subView as? UIButton {
+                let imageName = (button.tag <= tagSelected) ? "star.fill" : "star"
+                button.setImage(UIImage(systemName: imageName), for: .normal)
+            }
+        }
     }
     
     @IBAction func uploadPhoto(_ sender: Any) {
