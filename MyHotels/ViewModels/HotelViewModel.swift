@@ -17,14 +17,14 @@ class HotelViewModel {
     
     var nameOfTheHotel: NSAttributedString {
         let name = model.name
-        return NSAttributedString(string: name, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12, weight: .bold)])
+        return NSAttributedString(string: name, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: .bold)])
         
     }
     
     var rating: NSAttributedString {
         let ratingInt = model.rating.rawValue
         let ratingString = "Rating: \(ratingInt) stars"
-        return NSAttributedString(string: ratingString, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 10, weight: .regular)])
+        return NSAttributedString(string: ratingString, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14, weight: .regular)])
     }
     
     var hotelImage: UIImage? {

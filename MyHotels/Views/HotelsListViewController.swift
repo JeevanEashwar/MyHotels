@@ -88,9 +88,8 @@ extension HotelsListViewController: UITableViewDataSource, UITableViewDelegate {
     
     private func makeEditContextualAction(forRowAt indexPath: IndexPath) -> UIContextualAction {
         return UIContextualAction(style: .normal, title: "Edit") { (action, swipeButtonView, completion) in
-            action.image = UIImage(systemName: "square.and.pencil")
-            action.image?.withTintColor(.systemGreen)
-            action.backgroundColor = .systemOrange
+            swipeButtonView.addCardLook()
+            swipeButtonView.backgroundColor = UIColor.themeColor(type: .light)
             self.editingHotelIndex = indexPath.row
             self.performSegue(withIdentifier: "HotelDetailsFormViewSegueEdit", sender: self)
             completion(true)

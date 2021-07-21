@@ -15,4 +15,13 @@ extension UIView {
         self.layer.shadowRadius = 6.0
         self.layer.shadowOpacity = 0.5
     }
+    
+    func addGradientBackgroungColor() {
+        let gradient = CAGradientLayer()
+        gradient.frame = self.bounds
+        gradient.colors = [UIColor.themeColor(type: .medium).cgColor, UIColor.themeColor(type: .light).cgColor]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        self.layer.insertSublayer(gradient, at: 0)
+    }
 }

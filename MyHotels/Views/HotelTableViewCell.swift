@@ -31,6 +31,8 @@ class HotelTableViewCell: UITableViewCell {
         hotelName.attributedText = hotelViewModel.nameOfTheHotel
         rating.attributedText = hotelViewModel.rating
         containerView.addCardLook()
+        containerView.backgroundColor = UIColor.themeColor(type: .light)
+        hotelImageView.addCardLook()
     }
     
 }

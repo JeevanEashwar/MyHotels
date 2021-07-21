@@ -52,6 +52,7 @@ class HotelDetailsFormViewController: BaseViewController {
         addTapGestureToDismissKeyboard()
         createDatePicker()
         imagePicker = ImagePicker(presentationController: self, delegate: self)
+        hotelImageView.addCardLook()
     }
     
     override func configure(pageTitle: String) {
@@ -127,6 +128,7 @@ extension HotelDetailsFormViewController {
         // toolbar
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
+        toolBar.tintColor = UIColor.black
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(datePicked))
         toolBar.setItems([doneButton], animated: true)
         
