@@ -8,7 +8,7 @@
 import Foundation
 
 class HotelsListViewModel {
-    var hotels: [Hotel] = [Hotel(name: "Ramada", address: "Mumbai", dateOfStay: Date(), pricePerDay: 3200.0, rating: .four, photo: nil)]
+    var hotels: [Hotel] = []
     
     var numberOfRows: Int {
         hotels.count
