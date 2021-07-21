@@ -31,6 +31,10 @@ class HotelDetailsFormViewController: BaseViewController {
     let datePicker = UIDatePicker()
     var imagePicker: ImagePicker!
     
+    var ratingSelected: Rating = .five // default
+    var imageData: Data?
+    var pickedDate: Date = Date()
+    
     // MARK: View methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +50,7 @@ class HotelDetailsFormViewController: BaseViewController {
     @IBAction func ratingSelected(_ sender: UIButton) {
         let tagSelected = sender.tag
         // Store the selected rating
-        let ratingSelected = Rating(rawValue: tagSelected - 1000)
+        ratingSelected = Rating(rawValue: tagSelected - 1000) ?? .five
         // update UI
         for subView in ratingButtonsStackView.arrangedSubviews {
             if let button = subView as? UIButton {
@@ -61,6 +65,13 @@ class HotelDetailsFormViewController: BaseViewController {
     }
     
     @IBAction func saveAndExit(_ sender: UIButton) {
+        let priceEntered = Double(pricePerDay.text ?? "") ?? 0.0
+        let newHotelDetails = Hotel(name: name.text ?? "",
+                                    dateOfStay: pickedDate,
+                                    pricePerDay: priceEntered,
+                                    rating: ratingSelected,
+                                    photo: imageData)
+        dismiss(animated: true, completion: nil)
     }
     
 }
@@ -91,7 +102,7 @@ extension HotelDetailsFormViewController {
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
         
-        let pickedDate = datePicker.date
+        pickedDate = datePicker.date
         dateOfStay.text = formatter.string(from: pickedDate)
         dateOfStay.endEditing(true)
     }
@@ -101,5 +112,18 @@ extension HotelDetailsFormViewController {
 extension HotelDetailsFormViewController: ImagePickerDelegate {
     func didSelect(image: UIImage?) {
         hotelImageView.image = image
+        imageData = image?.pngData()
+    }
+}
+
+// Price validation
+extension HotelDetailsFormViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == pricePerDay {
+            let allowedCharacters = CharacterSet.decimalDigits
+            let characterSet = CharacterSet(charactersIn: string)
+            return allowedCharacters.isSuperset(of: characterSet)
+        }
+        return true
     }
 }

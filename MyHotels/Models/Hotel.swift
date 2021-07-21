@@ -13,7 +13,7 @@ struct Hotel: Codable {
     var dateOfStay: Date
     var pricePerDay: Double
     var rating: Rating
-    var photo: Data
+    var photo: Data?
 }
 
 /// Choosing enumeration for Rating in order to keep the window between 1 and 5.
