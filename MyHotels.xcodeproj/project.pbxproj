@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		09432C2626A7F04A0014CCF0 /* HotelDetailsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09432C2426A7F04A0014CCF0 /* HotelDetailsFormViewController.swift */; };
 		09432C2726A7F04A0014CCF0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09432C2526A7F04A0014CCF0 /* BaseViewController.swift */; };
+		09432C3126A8041E0014CCF0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09432C3026A8041E0014CCF0 /* ImagePicker.swift */; };
 		09CD08FF26A7C2E300574B58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CD08FE26A7C2E300574B58 /* AppDelegate.swift */; };
 		09CD090126A7C2E300574B58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CD090026A7C2E300574B58 /* SceneDelegate.swift */; };
 		09CD090326A7C2E300574B58 /* HotelsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CD090226A7C2E300574B58 /* HotelsListViewController.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		09432C2426A7F04A0014CCF0 /* HotelDetailsFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelDetailsFormViewController.swift; sourceTree = "<group>"; };
 		09432C2526A7F04A0014CCF0 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		09432C3026A8041E0014CCF0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		09CD08FB26A7C2E300574B58 /* MyHotels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHotels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09CD08FE26A7C2E300574B58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09CD090026A7C2E300574B58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				09CD090226A7C2E300574B58 /* HotelsListViewController.swift */,
 				09432C2526A7F04A0014CCF0 /* BaseViewController.swift */,
 				09432C2426A7F04A0014CCF0 /* HotelDetailsFormViewController.swift */,
+				09432C3026A8041E0014CCF0 /* ImagePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				09CD090326A7C2E300574B58 /* HotelsListViewController.swift in Sources */,
 				09CD08FF26A7C2E300574B58 /* AppDelegate.swift in Sources */,
 				09432C2626A7F04A0014CCF0 /* HotelDetailsFormViewController.swift in Sources */,
+				09432C3126A8041E0014CCF0 /* ImagePicker.swift in Sources */,
 				09CD094226A7C56400574B58 /* Hotel.swift in Sources */,
 				09CD090126A7C2E300574B58 /* SceneDelegate.swift in Sources */,
 				09432C2726A7F04A0014CCF0 /* BaseViewController.swift in Sources */,

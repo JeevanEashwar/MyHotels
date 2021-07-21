@@ -29,6 +29,7 @@ class HotelDetailsFormViewController: BaseViewController {
     
     var pageJob: PageJob = .add
     let datePicker = UIDatePicker()
+    var imagePicker: ImagePicker!
     
     // MARK: View methods
     override func viewDidLoad() {
@@ -38,6 +39,7 @@ class HotelDetailsFormViewController: BaseViewController {
         configure(pageTitle: pageTitle)
         addTapGestureToDismissKeyboard()
         createDatePicker()
+        imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
     
     // MARK: IBAction methods
@@ -54,10 +56,11 @@ class HotelDetailsFormViewController: BaseViewController {
         }
     }
     
-    @IBAction func uploadPhoto(_ sender: Any) {
+    @IBAction func uploadPhoto(_ sender: UIButton) {
+        imagePicker.present(from: sender)
     }
     
-    @IBAction func saveAndExit(_ sender: Any) {
+    @IBAction func saveAndExit(_ sender: UIButton) {
     }
     
 }
@@ -91,5 +94,12 @@ extension HotelDetailsFormViewController {
         let pickedDate = datePicker.date
         dateOfStay.text = formatter.string(from: pickedDate)
         dateOfStay.endEditing(true)
+    }
+}
+
+// ImagePicker logic
+extension HotelDetailsFormViewController: ImagePickerDelegate {
+    func didSelect(image: UIImage?) {
+        hotelImageView.image = image
     }
 }
