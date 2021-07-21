@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol HotelUpdates: AnyObject {
+    func addNewHotel(hotel: Hotel)
+    func updateHotel(hotel: Hotel, at Index: Int)
+}
 /// Enumeration to decide the behaviour of HotelDetailsFormViewController
 enum PageJob {
     case edit
@@ -28,6 +32,9 @@ class HotelDetailsFormViewController: BaseViewController {
     @IBOutlet weak var ratingButtonsStackView: UIStackView!
     
     var pageJob: PageJob = .add
+    var indexOfHotel: Int?
+    weak var delegate: HotelUpdates?
+    
     let datePicker = UIDatePicker()
     var imagePicker: ImagePicker!
     
@@ -44,6 +51,12 @@ class HotelDetailsFormViewController: BaseViewController {
         addTapGestureToDismissKeyboard()
         createDatePicker()
         imagePicker = ImagePicker(presentationController: self, delegate: self)
+    }
+    
+    func injectDependencies(pageJob: PageJob, indexOfHotel: Int?, delegate: HotelUpdates) {
+        self.pageJob = pageJob
+        self.indexOfHotel = indexOfHotel
+        self.delegate = delegate
     }
     
     // MARK: IBAction methods
@@ -71,6 +84,12 @@ class HotelDetailsFormViewController: BaseViewController {
                                     pricePerDay: priceEntered,
                                     rating: ratingSelected,
                                     photo: imageData)
+        switch pageJob {
+        case .add:
+            delegate?.addNewHotel(hotel: newHotelDetails)
+        case .edit:
+            delegate?.updateHotel(hotel: newHotelDetails, at: indexOfHotel ?? Int.max)
+        }
         dismiss(animated: true, completion: nil)
     }
     
