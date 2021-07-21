@@ -10,6 +10,7 @@ import Foundation
 /// Base entity to capture the hotel details
 struct Hotel: Codable {
     var name: String
+    var address: String
     var dateOfStay: Date
     var pricePerDay: Double
     var rating: Rating

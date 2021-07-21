@@ -9,7 +9,7 @@ import UIKit
 
 protocol HotelUpdates: AnyObject {
     func addNewHotel(hotel: Hotel)
-    func updateHotel(hotel: Hotel, at Index: Int)
+    func updateHotel(hotel: Hotel, at index: Int)
 }
 /// Enumeration to decide the behaviour of HotelDetailsFormViewController
 enum PageJob {
@@ -34,6 +34,7 @@ class HotelDetailsFormViewController: BaseViewController {
     var pageJob: PageJob = .add
     var indexOfHotel: Int?
     weak var delegate: HotelUpdates?
+    var viewModel: HotelsListViewModel?
     
     let datePicker = UIDatePicker()
     var imagePicker: ImagePicker!
@@ -53,10 +54,34 @@ class HotelDetailsFormViewController: BaseViewController {
         imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
     
-    func injectDependencies(pageJob: PageJob, indexOfHotel: Int?, delegate: HotelUpdates) {
+    override func configure(pageTitle: String) {
+        super.configure(pageTitle: pageTitle)
+        if pageJob == .edit {
+            // Prefill the values
+            if let index = indexOfHotel, let hotelViewModel = self.viewModel?.hotelViewModel(at: index) {
+                name.text = hotelViewModel.nameOfTheHotel.string
+                address.text = hotelViewModel.address
+                dateOfStay.text = hotelViewModel.dateOfStay
+                pricePerDay.text = hotelViewModel.pricePerDay
+                ratingSelected = hotelViewModel.ratingSelected
+                for subView in ratingButtonsStackView.arrangedSubviews {
+                    if let button = subView as? UIButton, button.tag == ratingSelected.rawValue + 1000 {
+                        DispatchQueue.main.async {
+                            self.ratingSelected(button)
+                        }
+                    }
+                }
+                hotelImageView.image = hotelViewModel.hotelImage
+                imageData = hotelViewModel.hotelImage?.pngData()
+            }
+        }
+    }
+    
+    func injectDependencies(viewModel: HotelsListViewModel, pageJob: PageJob, indexOfHotel: Int?, delegate: HotelUpdates) {
         self.pageJob = pageJob
         self.indexOfHotel = indexOfHotel
         self.delegate = delegate
+        self.viewModel = viewModel
     }
     
     // MARK: IBAction methods
@@ -80,6 +105,7 @@ class HotelDetailsFormViewController: BaseViewController {
     @IBAction func saveAndExit(_ sender: UIButton) {
         let priceEntered = Double(pricePerDay.text ?? "") ?? 0.0
         let newHotelDetails = Hotel(name: name.text ?? "",
+                                    address: address.text ?? "",
                                     dateOfStay: pickedDate,
                                     pricePerDay: priceEntered,
                                     rating: ratingSelected,
@@ -90,7 +116,7 @@ class HotelDetailsFormViewController: BaseViewController {
         case .edit:
             delegate?.updateHotel(hotel: newHotelDetails, at: indexOfHotel ?? Int.max)
         }
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
